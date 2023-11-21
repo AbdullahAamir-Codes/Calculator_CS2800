@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Stack.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CalculatorCW</a> &gt; <a href="index.source.html" class="el_package">uk.ac.rhul.cs2800</a> &gt; <span class="el_source">Stack.java</span></div><h1>Stack.java</h1><pre class="source lang-java linenums">package uk.ac.rhul.cs2800;
+
+import java.util.ArrayList;
+
+/**
+ * Some code of this class is taken from Dave COHEN (from a jar file on Moodle).Represents a stack
+ * data structure that can contain different types of Entry objects.
+ */
+public final class Stack {
+  private final ArrayList&lt;Entry&gt; contents;
+  private int size;
+
+  /**
+   * Constructs an empty stack.
+   */
+<span class="fc" id="L16">  public Stack() {</span>
+<span class="fc" id="L17">    this.contents = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L18">    this.size = 0;</span>
+<span class="fc" id="L19">  }</span>
+
+  /**
+   * Checks if the stack is empty.
+   * 
+   * @return 0 if the stack is empty, otherwise returns size.
+   */
+  public boolean isEmpty() {
+<span class="fc bfc" id="L27" title="All 2 branches covered.">    return size == 0;</span>
+  }
+
+  /**
+   * Pushes an Entry onto the stack.
+   * 
+   * @param entry The Entry to push onto the stack.
+   */
+  public void push(final Entry entry) {
+<span class="fc" id="L36">    this.contents.add(entry);</span>
+<span class="fc" id="L37">    ++this.size;</span>
+<span class="fc" id="L38">  }</span>
+
+  /**
+   * Returns the top Entry on the stack without removing it.
+   * 
+   * @return The top Entry on the stack.
+   * @throws StackEmptyException if the stack is empty.
+   */
+  public Entry top() throws StackEmptyException {
+<span class="fc bfc" id="L47" title="All 2 branches covered.">    if (this.size == 0) {</span>
+<span class="fc" id="L48">      throw new StackEmptyException(&quot;Top taken for empty stack&quot;);</span>
+    }
+<span class="fc" id="L50">    return this.contents.get(this.size - 1);</span>
+  }
+
+  /**
+   * Gets the number of elements currently in the stack.
+   * 
+   * @return The number of elements in the stack.
+   */
+  public int size() {
+<span class="fc" id="L59">    return this.size;</span>
+  }
+
+  /**
+   * Removes and returns the top Entry from the stack.
+   * 
+   * @return The Entry removed from the top of the stack.
+   * @throws StackEmptyException if the stack is empty.
+   */
+  public Entry pop() throws StackEmptyException {
+<span class="fc bfc" id="L69" title="All 2 branches covered.">    if (this.size == 0) {</span>
+<span class="fc" id="L70">      throw new StackEmptyException(&quot;Pop is taken for empty stack&quot;);</span>
+    }
+<span class="fc" id="L72">    --this.size;</span>
+<span class="fc" id="L73">    final Entry retval = this.contents.remove(this.size);</span>
+<span class="fc" id="L74">    return retval;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

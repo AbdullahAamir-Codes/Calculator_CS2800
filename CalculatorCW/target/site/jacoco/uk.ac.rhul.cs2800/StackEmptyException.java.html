@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StackEmptyException.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CalculatorCW</a> &gt; <a href="index.source.html" class="el_package">uk.ac.rhul.cs2800</a> &gt; <span class="el_source">StackEmptyException.java</span></div><h1>StackEmptyException.java</h1><pre class="source lang-java linenums">package uk.ac.rhul.cs2800;
+
+/**
+ * From Dave COHEN, picked from a jar file on Moodle. Represents a custom exception,
+ * StackEmptyException, used to indicate that a operation was attempted on an empty stack.
+ * 
+ * @author abdul
+ */
+public class StackEmptyException extends Exception {
+  private static final long serialVersionUID = -8769847646565L;
+
+  /**
+   * Constructs new StackEmptyException with detail message.
+   * 
+   * @param string Detailed message that describes reason for the exception.
+   */
+  public StackEmptyException(final String string) {
+<span class="fc" id="L18">    super(string);</span>
+<span class="fc" id="L19">  }</span>
+
+  /**
+   * Constructs a new StackEmptyException with no specified detail message.
+   */
+<span class="fc" id="L24">  public StackEmptyException() {}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
