@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BadType.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CalculatorCW</a> &gt; <a href="index.source.html" class="el_package">uk.ac.rhul.cs2800</a> &gt; <span class="el_source">BadType.java</span></div><h1>BadType.java</h1><pre class="source lang-java linenums">package uk.ac.rhul.cs2800;
+
+import java.io.Serializable;
+
+/**
+ * Constructs a new BadType exception. Custom exception class representing a BadType. Throws an
+ * exception to indicate error related to wrong or unexpected type.
+ * 
+ * @author abdul
+ */
+public class BadType extends Exception implements Serializable {
+  private static final long serialVersionUID = 1L;
+
+  /**
+   * Constructs a new BadType exception with the message.
+   * 
+   * @param message The detail message which describes issue related to the BadType
+   */
+  public BadType(String message) {
+<span class="fc" id="L20">    super(message);</span>
+<span class="fc" id="L21">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
