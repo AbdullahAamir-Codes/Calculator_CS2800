@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  * Validates functionality of the Entry class, methods for getting back the type, value, symbol, and
  * string associated with an Entry object. Tests the getType, getValue, getSymbol, and getString
  * methods
- * 
+ *
  * @author abdul
  */
 

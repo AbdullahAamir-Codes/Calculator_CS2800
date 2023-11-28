@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests the ordinal values and names of the Type enum constants.
- * 
+ *
  * @author abdul
  */
 public class TestType {

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Ensures that 'toString' method returns expected string representations for many Symbol enum
  * values.
- * 
+ *
  * @author abdul
  */
 public class TestSymbol {

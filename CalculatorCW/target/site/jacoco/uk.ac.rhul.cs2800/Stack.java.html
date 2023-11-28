@@ -20,7 +20,7 @@ public final class Stack {
 
   /**
    * Checks if the stack is empty.
-   * 
+   *
    * @return 0 if the stack is empty, otherwise returns size.
    */
   public boolean isEmpty() {
@@ -29,7 +29,7 @@ public final class Stack {
 
   /**
    * Pushes an Entry onto the stack.
-   * 
+   *
    * @param entry The Entry to push onto the stack.
    */
   public void push(final Entry entry) {
@@ -39,7 +39,7 @@ public final class Stack {
 
   /**
    * Returns the top Entry on the stack without removing it.
-   * 
+   *
    * @return The top Entry on the stack.
    * @throws StackEmptyException if the stack is empty.
    */
@@ -52,7 +52,7 @@ public final class Stack {
 
   /**
    * Gets the number of elements currently in the stack.
-   * 
+   *
    * @return The number of elements in the stack.
    */
   public int size() {
@@ -61,7 +61,7 @@ public final class Stack {
 
   /**
    * Removes and returns the top Entry from the stack.
-   * 
+   *
    * @return The Entry removed from the top of the stack.
    * @throws StackEmptyException if the stack is empty.
    */

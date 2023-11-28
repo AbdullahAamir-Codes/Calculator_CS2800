@@ -1,9 +1,9 @@
-#Mon Nov 20 16:06:13 GMT 2023
-configuration*?=18D86FE16228CA974C6413C9B4C6499E56561A9C
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Entry.java=1697581227168
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Type.java=1697585185885
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\BadType.java=1697570841874
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\InvalidExpressionException.java=1697571648267
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Stack.java=1697582051314
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Symbol.java=1697570502395
-C\:\\Users\\abdul\\eclipse-workspace\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\StackEmptyException.java=1697571513046
+#Wed Nov 22 22:49:30 GMT 2023
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\BadType.java=1700686418763
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Stack.java=1700689474183
+configuration*?=19E7C7F89EF1DBA9CCCCFAAD8C3CDE7354D69E9C
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Entry.java=1700689437647
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Symbol.java=1700689537038
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\Type.java=1700689559001
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\InvalidExpressionException.java=1700689446982
+C\:\\Users\\abdul\\eclipse-workspace\\CS2800\ 2023\\CalculatorCW\\src\\main\\java\\uk\\ac\\rhul\\cs2800\\StackEmptyException.java=1700689514562

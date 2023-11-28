@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * This class contains tests for the Stack class.
- * 
+ *
  * @author abdul
  */
 public class TestStack {
@@ -34,7 +34,7 @@ public class TestStack {
 
   /**
    * Test 2. Tests pushing and popping elements from the stack.
-   * 
+   *
    * @throws StackEmptyException if the stack is empty when popping.
    * @throws BadType if the entry type is incorrect.
    */
@@ -52,7 +52,7 @@ public class TestStack {
 
   /**
    * Test 3. Tests retrieving the top element of the stack without removing it.
-   * 
+   *
    * @throws StackEmptyException if the stack is empty when using the top method.
    * @throws BadType if the entry type is incorrect.
    */

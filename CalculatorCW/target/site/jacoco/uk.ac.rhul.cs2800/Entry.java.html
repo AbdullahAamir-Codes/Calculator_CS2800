@@ -3,7 +3,7 @@
 /**
  * Some code of this class is taken from Dave COHEN (from a jar file on Moodle). Represents an entry
  * in a symbolically, A Symbol, Number, or String.
- * 
+ *
  * @author abdul
  */
 public class Entry {
@@ -14,7 +14,7 @@ public class Entry {
 
   /**
    * Constructor for Entry object for a Symbol.
-   * 
+   *
    * @param operator The Symbol to be stored in Entry.
    */
 <span class="fc" id="L20">  public Entry(final Symbol operator) {</span>
@@ -24,7 +24,7 @@ public class Entry {
 
   /**
    * Constructor for Entry object for a Number.
-   * 
+   *
    * @param f The floating-point number to be stored in this Entry.
    */
 <span class="fc" id="L30">  public Entry(final float f) {</span>
@@ -34,7 +34,7 @@ public class Entry {
 
   /**
    * Constructor for Entry object for a String.
-   * 
+   *
    * @param s The string to be stored in this Entry.
    */
 <span class="fc" id="L40">  public Entry(final String s) {</span>
@@ -44,7 +44,7 @@ public class Entry {
 
   /**
    * Gets type of this Entry.
-   * 
+   *
    * @return The Type of this Entry, which can be SYMBOL, NUMBER, or STRING.
    */
   public final Type getType() {
@@ -53,7 +53,7 @@ public class Entry {
 
   /**
    * Gets the value of the Entry if it is a Number.
-   * 
+   *
    * @return floating-point number of this Entry.
    * @throws BadType if this Entry is NUMBER.
    */
@@ -66,7 +66,7 @@ public class Entry {
 
   /**
    * Gets the Symbol stored in Entry.
-   * 
+   *
    * @return Symbol stored in Entry.
    * @throws BadType if this Entry is not SYMBOL.
    */
@@ -79,7 +79,7 @@ public class Entry {
 
   /**
    * Gets String stored in Entry.
-   * 
+   *
    * @return String stored in Entry.
    * @throws BadType if this Entry is not STRING.
    */
@@ -92,7 +92,7 @@ public class Entry {
 
   /**
    * Computes hash code for Entry.
-   * 
+   *
    * @return Hash code for Entry.
    */
   @Override
@@ -106,7 +106,7 @@ public class Entry {
 
   /**
    * Compares Entry to another object for equality.
-   * 
+   *
    * @param obj The object to compare with Entry.
    * @return true if the objects are equal, otherwise returns false.
    */
