@@ -2,7 +2,7 @@ package uk.ac.rhul.cs2800;
 
 /**
  * Represents different types for a token.
- * 
+ *
  * @author abdul
  */
 public enum Type {
@@ -33,7 +33,7 @@ public enum Type {
 
   /**
    * Returns name associated with Type.
-   * 
+   *
    * @return name of Type.
    */
   public String getName() {
@@ -42,7 +42,7 @@ public enum Type {
 
   /**
    * Returns ordinal value associated with Type.
-   * 
+   *
    * @return Ordinal value of Type.
    */
   public int getOrdinal() {

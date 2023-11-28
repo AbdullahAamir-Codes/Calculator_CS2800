@@ -3,7 +3,7 @@ package uk.ac.rhul.cs2800;
 /**
  * From Dave COHEN, picked from a jar file on Moodle. Represents a custom exception,
  * StackEmptyException, used to indicate that a operation was attempted on an empty stack.
- * 
+ *
  * @author abdul
  */
 public class StackEmptyException extends Exception {
@@ -11,7 +11,7 @@ public class StackEmptyException extends Exception {
 
   /**
    * Constructs new StackEmptyException with detail message.
-   * 
+   *
    * @param string Detailed message that describes reason for the exception.
    */
   public StackEmptyException(final String string) {

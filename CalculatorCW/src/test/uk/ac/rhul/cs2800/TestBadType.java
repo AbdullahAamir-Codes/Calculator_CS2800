@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * A test class for the custom exception "BadType".
- * 
+ *
  * @author abdul
  */
 

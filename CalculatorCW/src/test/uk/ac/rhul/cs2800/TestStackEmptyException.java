@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Set of test cases for the StackEmptyException class.
- * 
+ *
  * @author abdul
  */
 public class TestStackEmptyException {

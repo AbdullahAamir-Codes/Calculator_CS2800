@@ -3,7 +3,7 @@ package uk.ac.rhul.cs2800;
 /**
  * From Dave COHEN, picked from a jar file on Moodle. Represents thrown exception when invalid
  * expression is encountered.
- * 
+ *
  * @author abdul
  */
 public class InvalidExpressionException extends Exception {

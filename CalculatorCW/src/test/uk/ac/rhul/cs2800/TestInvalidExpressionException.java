@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * A test class for the InvalidExpressionException class.
- * 
+ *
  * @author abdul
  */
 public class TestInvalidExpressionException {
