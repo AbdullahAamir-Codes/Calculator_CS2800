@@ -7,9 +7,8 @@
 	</classpathentry>
 	<classpathentry kind="src" path="java"/>
 	<classpathentry kind="src" path="CalculatorCW/src/test/java"/>
-	<classpathentry excluding="resources/|resources/" kind="src" path="CalculatorCW/src/main"/>
+	<classpathentry excluding="resources/|resources/|resources/|java/" kind="src" path="CalculatorCW/src/main"/>
 	<classpathentry kind="src" path="CalculatorCW/src/main/resources"/>
-	<classpathentry excluding="java/" kind="src" path="CalculatorCW/src/test"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="CalculatorCW/target/classes"/>
 </classpath>

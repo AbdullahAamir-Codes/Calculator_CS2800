@@ -7,6 +7,6 @@ package uk.ac.rhul.cs2800;
  */
 public interface Calculator {
 
-  float evaluate(String string) throws InvalidExpressionException;
+  float evaluate(String string) throws InvalidExpressionException, StackEmptyException;
 
 }
