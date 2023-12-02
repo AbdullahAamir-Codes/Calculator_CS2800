@@ -18,8 +18,8 @@ public class StandardCalc implements Calculator {
    */
   public StandardCalc() {
     this.rpCalc = new RevPolishCalc();
-    this.transStack = null;
-    this.revStack = null;
+    this.transStack = new OpStack();
+    this.revStack = new StrStack();
   }
 
   /**
@@ -33,6 +33,10 @@ public class StandardCalc implements Calculator {
   @Override
   public final float evaluate(final String string)
       throws InvalidExpressionException, StackEmptyException {
+    if (string.isEmpty()) {
+      return 0; // Assuming an empty expression should evaluate to 0
+    }
+
     final Scanner expr = new Scanner(string);
     final StringBuilder retVal = new StringBuilder();
     this.transStack = new OpStack();
@@ -43,8 +47,7 @@ public class StandardCalc implements Calculator {
     expr.close();
     boolean expectNumber = true;
     while (!this.revStack.isEmpty()) {
-      String nextToken = null;
-      nextToken = this.revStack.pop();
+      String nextToken = this.revStack.pop();
       if (Character.isDigit(nextToken.charAt(0)) && expectNumber) {
         retVal.append(String.valueOf(nextToken) + " ");
         expectNumber = false;
@@ -73,14 +76,12 @@ public class StandardCalc implements Calculator {
         } else if (what == Symbol.DIVIDE) {
           what = Symbol.EXPODIVIDE;
         }
-        OpStack opStack = new OpStack();
-        opStack.push(what);
+        this.transStack.push(what);
         expectNumber = true;
       }
     }
     while (!this.transStack.isEmpty()) {
-      Symbol nextOp2 = Symbol.INVALID;
-      nextOp2 = this.transStack.pop();
+      Symbol nextOp2 = this.transStack.pop();
       if (nextOp2 == Symbol.RIGHT_BRACKET) {
         throw new InvalidExpressionException("Unbalanced expression");
       }
@@ -89,4 +90,3 @@ public class StandardCalc implements Calculator {
     return this.rpCalc.evaluate(retVal.toString());
   }
 }
-

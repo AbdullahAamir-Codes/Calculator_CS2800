@@ -17,11 +17,8 @@ public class TestStackEmptyException {
    */
   @Test
   public void testStackEmptyExceptionWithMessage() {
-    // Arrange
     String errorMessage = "Error.";
-    // Act
     StackEmptyException exception = new StackEmptyException(errorMessage);
-    // Assert
     assertEquals(errorMessage, exception.getMessage());
   }
 
@@ -30,9 +27,7 @@ public class TestStackEmptyException {
    */
   @Test
   public void testStackEmptyExceptionWithoutMessage() {
-    // Act
     StackEmptyException exception = new StackEmptyException();
-    // Assert
     assertNull(exception.getMessage());
   }
 }
