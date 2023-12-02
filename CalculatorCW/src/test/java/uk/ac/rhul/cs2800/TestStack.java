@@ -10,7 +10,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * This class contains tests for the Stack class.
+ * Contains tests for the Stack class.
  *
  * @author abdul
  */

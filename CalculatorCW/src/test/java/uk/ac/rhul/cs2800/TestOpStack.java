@@ -18,7 +18,7 @@ import org.junit.jupiter.api.Test;
 class TestOpStack {
 
   /**
-   * Tests constructor of OpStack.
+   * Test 1. Tests constructor of OpStack.
    */
   @Test
   void testOpStack() {
@@ -27,7 +27,7 @@ class TestOpStack {
   }
 
   /**
-   * Tests pop method of OpStack.
+   * Test 2. Tests pop method of OpStack.
    */
   @Test
   void testPop() {
@@ -50,7 +50,7 @@ class TestOpStack {
   }
 
   /**
-   * Tests push method of OpStack.
+   * Test 3. Tests push method of OpStack.
    */
   @Test
   void testPush() {
@@ -70,7 +70,7 @@ class TestOpStack {
   }
 
   /**
-   * Tests isEmpty method of OpStack.
+   * Test 4. Tests isEmpty method of OpStack.
    */
   @Test
   void testIsEmpty() {

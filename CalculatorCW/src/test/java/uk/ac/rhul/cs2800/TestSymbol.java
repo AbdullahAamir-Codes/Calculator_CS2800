@@ -35,6 +35,6 @@ public class TestSymbol {
     assertEquals("`", Symbol.EXPODIVIDE.toString());
     assertEquals("(", Symbol.LEFT_BRACKET.toString());
     assertEquals(")", Symbol.RIGHT_BRACKET.toString());
-    assertEquals("!", Symbol.INVALID.toString());
+    assertEquals("?", Symbol.INVALID.toString());
   }
 }
