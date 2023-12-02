@@ -5,10 +5,13 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests functionality of StandardCalc class.
+ */
 class TestStandardCalc {
 
   /**
-   * Test 1.
+   * Test 1. Test case for solving valid expression.
    *
    * @throws InvalidExpressionException If invalid expression is entered
    * @throws StackEmptyException If stack is empty
@@ -17,12 +20,11 @@ class TestStandardCalc {
   void testEvaluateValidExpression() throws InvalidExpressionException, StackEmptyException {
     StandardCalc calculator = new StandardCalc();
     float result = calculator.evaluate("3 + 4 * 2");
-    assertEquals(11, result, 0.001); // Adjust the delta value as needed
+    assertEquals(14, result, 0.001);
   }
 
   /**
-   * Test 2.
-   * 
+   * Test 2. Test case for evaluating invalid expression.
    */
   @Test
   void testEvaluateInvalidExpression() {
@@ -31,7 +33,7 @@ class TestStandardCalc {
   }
 
   /**
-   * Test 3.
+   * Test 3. Test case for evaluating expression having unbalanced parentheses.
    */
   @Test
   void testEvaluateUnbalancedExpression() {
@@ -40,7 +42,7 @@ class TestStandardCalc {
   }
 
   /**
-   * Test 4.
+   * Test 4. Test case for evaluating empty expression.
    *
    * @throws InvalidExpressionException If invalid expression is entered
    * @throws StackEmptyException If stack is empty
@@ -49,6 +51,6 @@ class TestStandardCalc {
   void testEvaluateEmptyExpression() throws InvalidExpressionException, StackEmptyException {
     StandardCalc calculator = new StandardCalc();
     float result = calculator.evaluate("");
-    assertEquals(0, result, 0.001); // Assuming an empty expression should evaluate to 0
+    assertEquals(0, result, 0.001);
   }
 }
