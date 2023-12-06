@@ -1,30 +1,53 @@
 package uk.ac.rhul.cs2800;
 
 /**
- * Taken from moodle (calculator provided in CW2 description).
+ * By Dave Cohen, taken from moodle (calculator provided in CW2 description). Serves as entry point
+ * for calculator and Creates necessary components like model, view, and controller.
  * 
  * @author abdul
  */
 public class Driver {
 
   /**
-   * The entry point for the calculator.
+   * Main method of calculator. Creates a view, initializes calculator with the created view.
    * 
-   * @param args ignored - could be used to choose which view to load in future?
+   * @param args Cmd arguments.
    */
   public static void main(String[] args) {
-    ViewInterface view = new AsciiView();
+    ViewInterface view = createView();
+    runCalculator(view);
+  }
+
+  /**
+   * Initializes calculator with given view and starts calculator.
+   * 
+   * @param view to be associated with calculator.
+   */
+  public static void runCalculator(ViewInterface view) {
 
     CalcModel model = new CalcModel();
-    System.out.println("hello");
 
-    // Decide which view to build.
+    ViewFactory.setLastView(view);
+
+    new CalcController(model, view);
+
+    if (view != null) {
+      view.startView();
+    }
+  }
+
+  /**
+   * Creates and returns appropriate view for calculator. Default view is AsciiView, but if console
+   * is not available, CalcView.getInstance() will be used.
+   * 
+   * @return The created view.
+   */
+  private static ViewInterface createView() {
+    ViewInterface view = new AsciiView();
     if (System.console() == null) {
-      System.out.println("hello");
       view = CalcView.getInstance();
     }
-    new CalcController(model, view);
-    // All ready so begin the interface.
-    view.startView();
+
+    return view;
   }
 }

@@ -2,6 +2,7 @@ package uk.ac.rhul.cs2800;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.util.function.Consumer;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +18,7 @@ import javax.swing.border.BevelBorder;
  * 
  * @author abdul
  */
-public class CalcView extends JFrame {
+public class CalcView extends JFrame implements ViewInterface {
 
   private static final long serialVersionUID = -7214772146507844286L;
   private static final String infix = "Infix";
@@ -46,25 +47,25 @@ public class CalcView extends JFrame {
     this.panel.setBackground(Color.ORANGE);
     this.getContentPane().add(this.panel, "Center");
     this.panel.setLayout(new MigLayout());
-    this.panel.add(this.btnNewButton, "cell 1 0,alignx center,aligny center");
+    this.panel.add(this.getBtnNewButton(), "cell 1 0,alignx center,aligny center");
     final JLabel lblNewLabel_2 = new JLabel("Expression: ");
     this.panel.add(lblNewLabel_2, "cell 0 1,alignx right");
-    this.panel.add(this.textField, "cell 1 1,growx,aligny center");
-    this.textField.setColumns(10);
+    this.panel.add(this.getTextField(), "cell 1 1,growx,aligny center");
+    this.getTextField().setColumns(10);
     final JLabel lblNewLabel_3 = new JLabel("Result: ");
     this.panel.add(lblNewLabel_3, "cell 0 2,alignx right");
-    this.lblNewLabelThree.setOpaque(true);
-    this.lblNewLabelThree.setBorder(new BevelBorder(1, Color.GREEN, null, null, null));
-    this.lblNewLabelThree.setForeground(Color.BLACK);
-    this.lblNewLabelThree.setBackground(Color.GRAY);
-    this.panel.add(this.lblNewLabelThree, "cell 1 2,growx");
-    this.panel.add(this.rdbtnNewRadioButton, "flowx,cell 1 3,alignx center");
-    this.rdbtnNewRadioButton.setHorizontalAlignment(0);
-    this.buttonGroupOne.add(this.rdbtnNewRadioButton);
-    this.buttonGroupOne.add(this.rdbtnNewRadioButtonOne);
-    this.rdbtnNewRadioButtonOne.setSelected(true);
-    this.panel.add(this.rdbtnNewRadioButtonOne, "cell 1 3,alignx trailing");
-    this.rdbtnNewRadioButtonOne.setHorizontalAlignment(0);
+    this.getLblNewLabelThree().setOpaque(true);
+    this.getLblNewLabelThree().setBorder(new BevelBorder(1, Color.GREEN, null, null, null));
+    this.getLblNewLabelThree().setForeground(Color.BLACK);
+    this.getLblNewLabelThree().setBackground(Color.GRAY);
+    this.panel.add(this.getLblNewLabelThree(), "cell 1 2,growx");
+    this.panel.add(this.getRdbtnNewRadioButton(), "flowx,cell 1 3,alignx center");
+    this.getRdbtnNewRadioButton().setHorizontalAlignment(0);
+    this.buttonGroupOne.add(this.getRdbtnNewRadioButton());
+    this.buttonGroupOne.add(this.getRdbtnNewRadioButtonOne());
+    this.getRdbtnNewRadioButtonOne().setSelected(true);
+    this.panel.add(this.getRdbtnNewRadioButtonOne(), "cell 1 3,alignx trailing");
+    this.getRdbtnNewRadioButtonOne().setHorizontalAlignment(0);
   }
 
   /**
@@ -73,7 +74,7 @@ public class CalcView extends JFrame {
    * @param mal ActionListener to be set for Calculate button.
    */
   public void setCalculateListener(final ActionListener mal) {
-    this.btnNewButton.addActionListener(mal);
+    this.getBtnNewButton().addActionListener(mal);
   }
 
   /**
@@ -82,8 +83,8 @@ public class CalcView extends JFrame {
    * @param mal ActionListener to be set for the radio buttons.
    */
   public void setRadioListener(final ActionListener mal) {
-    this.rdbtnNewRadioButtonOne.addActionListener(mal);
-    this.rdbtnNewRadioButton.addActionListener(mal);
+    this.getRdbtnNewRadioButtonOne().addActionListener(mal);
+    this.getRdbtnNewRadioButton().addActionListener(mal);
   }
 
   /**
@@ -92,7 +93,7 @@ public class CalcView extends JFrame {
    * @param answer to be displayed.
    */
   public void setAnswer(final String answer) {
-    this.lblNewLabelThree.setText(answer);
+    this.getLblNewLabelThree().setText(answer);
   }
 
   /**
@@ -110,7 +111,7 @@ public class CalcView extends JFrame {
    * @return text entered in text field.
    */
   public String getQuestion() {
-    return this.textField.getText();
+    return this.getTextField().getText();
   }
 
   /**
@@ -119,8 +120,8 @@ public class CalcView extends JFrame {
    * @param answer to be displayed.
    */
   public void setAnswerString(final String answer) {
-    this.lblNewLabelThree.setText(answer);
-    this.lblNewLabelThree.setBackground(Color.GRAY);
+    this.getLblNewLabelThree().setText(answer);
+    this.getLblNewLabelThree().setBackground(Color.GRAY);
   }
 
   /**
@@ -129,8 +130,8 @@ public class CalcView extends JFrame {
    * @param report fail message to be displayed.
    */
   public void setFailString(final String report) {
-    this.lblNewLabelThree.setText(report);
-    this.lblNewLabelThree.setBackground(Color.RED);
+    this.getLblNewLabelThree().setText(report);
+    this.getLblNewLabelThree().setBackground(Color.RED);
   }
 
   /**
@@ -144,5 +145,55 @@ public class CalcView extends JFrame {
 
   public static String getInfix() {
     return infix;
+  }
+
+  public JButton getBtnNewButton() {
+    return btnNewButton;
+  }
+
+  public JRadioButton getRdbtnNewRadioButton() {
+    return rdbtnNewRadioButton;
+  }
+
+  public JRadioButton getRdbtnNewRadioButtonOne() {
+    return rdbtnNewRadioButtonOne;
+  }
+
+  public JLabel getLblNewLabelThree() {
+    return lblNewLabelThree;
+  }
+
+  public JTextField getTextField() {
+    return textField;
+  }
+
+  @Override
+  public void addCalculateObserver(Runnable f) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public void addTypeObserver(Consumer<OpType> c) {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public String getExpression() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void startView() {
+    // TODO Auto-generated method stub
+    
+  }
+
+  @Override
+  public String getViewName() {
+    // TODO Auto-generated method stub
+    return null;
   }
 }

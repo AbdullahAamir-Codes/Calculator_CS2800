@@ -1,11 +1,12 @@
 package uk.ac.rhul.cs2800;
 
+import java.awt.event.ActionListener;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
 /**
- * Taken from moodle (calculator provided in CW2 description). Reads an expression from the user and
- * evaluates it and prints out the answer.
+ * By Dave Cohen, taken from moodle (calculator provided in CW2 description). Reads an expression
+ * from the user and evaluates it and prints out the answer.
  * 
  * @author abdul
  */
@@ -86,5 +87,47 @@ public class AsciiView implements ViewInterface {
 
   public void setExpression(String expression) {
     System.out.println("Expression set to: " + expression);
+  }
+
+  @Override
+  public void setCalculateListener(ActionListener listener) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void setRadioListener(ActionListener listener) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public String getInfixString() {
+    // TODO Auto-generated method stub
+    return null;
+  }
+
+  @Override
+  public void setAnswerString(String answer) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void setFailString(String errorMessage) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public void setVisible(boolean b) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public String getViewName() {
+    // TODO Auto-generated method stub
+    return null;
   }
 }

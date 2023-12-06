@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 /**
  * Tests functionality of StandardCalc class.
+ * 
+ * @author abdul
  */
 class TestStandardCalc {
 
