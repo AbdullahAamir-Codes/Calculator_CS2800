@@ -1,8 +1,8 @@
 package uk.ac.rhul.cs2800;
 
 /**
- * Taken from moodle (calculator provided in CW2 description). Representing types of operations
- * supported by calculator.
+ * By Dave Cohen, taken from moodle (calculator provided in CW2 description). Representing types of
+ * operations supported by calculator.
  * 
  * @author abdul
  */

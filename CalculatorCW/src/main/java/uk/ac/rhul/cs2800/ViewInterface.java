@@ -1,45 +1,93 @@
 package uk.ac.rhul.cs2800;
 
+import java.awt.event.ActionListener;
 import java.util.function.Consumer;
 
 /**
- * Calculator view must implement these methods to allow the controller and the view to properly
- * work together.
- * 
+ * Represents interface for calculator view. It defines methods to observe and interact with
+ * calculator view. It can handle user interactions and can update view accordingly.
+ *
  * @author Dave Cohen (d.cohen@rhul.ac.uk)
  * @author abdul
- **/
+ */
 public interface ViewInterface {
 
   /**
-   * Add the method that should do the calculation.
-   * 
-   * @param f the runnable object to do the calculation (a method that takes no parameters and
-   *        returns no value)
+   * Adds observer for calculate action.
+   *
+   * @param f Runnable which will execute when calculate action is triggered.
    */
   void addCalculateObserver(Runnable f);
 
   /**
-   * Add the method to tell the controller the type of calculation to do.
-   * 
-   * @param c the method to do the calculation takes an OpType argument and returns no value
+   * Adds observer for type of operation.
+   *
+   * @param c Consumer that handles operation type when it changes.
    */
   void addTypeObserver(Consumer<OpType> c);
 
   /**
-   * The controller can call this to find the current expression to be evaluated.
+   * Retrieves expression from view.
+   *
+   * @return String representing current expression in view.
    */
   String getExpression();
 
   /**
-   * The controller should call this to display the evaluated answer to the user.
+   * Sets answer to be displayed in view.
+   *
+   * @param a answer to be displayed in view.
    */
-
   void setAnswer(String a);
 
   /**
-   * Activate the user interface - all systems are go. All buttons start disabled - the controller
-   * calls this method once it is ready to start calculating.
+   * Starts calculator view.
    */
-  public void startView();
+  void startView();
+
+  /**
+   * Sets ActionListener for calculate action.
+   *
+   * @param listener ActionListener to notify when calculate action occurs.
+   */
+  void setCalculateListener(ActionListener listener);
+
+  /**
+   * Sets ActionListener for radio button action.
+   *
+   * @param listener ActionListener to notify when radio button action occurs.
+   */
+  void setRadioListener(ActionListener listener);
+
+  /**
+   * Retrieves question from view.
+   *
+   * @return String representing current question in view.
+   */
+  String getQuestion();
+
+  /**
+   * Retrieves infix string from view.
+   *
+   * @return String representing infix notation of current expression in view.
+   */
+  String getInfixString();
+
+  /**
+   * Sets answer string to be displayed in view.
+   *
+   * @param answer string to be displayed in view.
+   */
+  void setAnswerString(String answer);
+
+  /**
+   * Sets error message to be displayed in case of calculation failure.
+   *
+   * @param errorMessage error message to be displayed in view.
+   */
+  void setFailString(String errorMessage);
+
+  void setVisible(boolean b);
+
+  String getViewName();
 }
