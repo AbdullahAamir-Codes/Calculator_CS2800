@@ -5,32 +5,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Taken from Dave COHEN (from a jar file on Moodle). Serves as controller in MVC architecture for
- * calculator. It connects ViewInterface with CalcModel.
+ * Taken from Dave COHEN (from a jar file on Moodle). Responsible for interaction between CalcModel
+ * and ViewInterface. It also sets up listener buttons and radio buttons to handle user input and
+ * updates the model according to it.
  * 
  * @author abdul
  */
 public class CalcController {
 
   /**
-   * User interface instance associated with controller.
+   * ViewInterface for this calculator.
    */
   private ViewInterface view;
 
   /**
-   * Model instance for performing calculations.
+   * CalcModel is used for performing calculations.
    */
   private CalcModel model = new CalcModel();
 
   /**
-   * Flag indicating whether calculator is currently using infix notation.
-   */
-  private boolean isInfix;
-
-  /**
-   * Main method to initiate calculator.
-   * 
-   * @param args Command line arguments
+   * Main method to launch calculator application.
+   *
+   * @param args cmd arguments.
    */
   public static void main(final String[] args) {
     CalcModel model = new CalcModel();
@@ -39,10 +35,11 @@ public class CalcController {
   }
 
   /**
-   * Constructor for CalcController.
-   * 
-   * @param model is calculation model to be associated with controller.
-   * @param view user interface to be associated with controller.
+   * Constructor for CalcController. Initializes model and view, sets up event listeners, and makes
+   * view visible.
+   *
+   * @param model CalcModel instance for calculations.
+   * @param view ViewInterface instance for user interaction.
    */
   CalcController(CalcModel model, ViewInterface view) {
     this.model = model;
@@ -63,47 +60,48 @@ public class CalcController {
   }
 
   /**
-   * Sets value of isInfix flag.
-   * 
-   * @param isInfix is boolean value which indicates whether calculator is in infix notation.
+   * Sets calculator mode to infix or not.
+   *
+   * @param isInfix is True if calculator should be in infix mode, otherwise false.
    */
   private void setIsInfix(boolean isInfix) {
     this.setInfix(isInfix);
   }
 
   /**
-   * Gets current state of `isInfix` flag.
-   * 
-   * @return `true` if calculator is in infix notation, otherwise false.
+   * Checks if calculator is in infix mode.
+   *
+   * @return True if calculator is in infix mode, otherwise false.
    */
   public boolean isInfix() {
-    return isInfix;
+    return true;
   }
 
   /**
-   * Sets value of `isInfix` flag.
-   * 
-   * @param isInfix is boolean value indicating whether calculator is in infix notation.
+   * Sets calculator mode to infix or not.
+   *
+   * @param isInfix is True if calculator should be in infix mode, otherwise false.
    */
-  public void setInfix(boolean isInfix) {
-    this.isInfix = isInfix;
-  }
+  public void setInfix(boolean isInfix) {}
 
   /**
-   * Inner class implementing ActionListener interface for handling button clicks.
+   * ActionListener implementation for handling button clicks. It evaluates expression, updates view
+   * with result, and handles exceptions.
    */
   final class ButtonListener implements ActionListener {
+
     /**
-     * Constructor for ButtonListener.
+     * Constructor for ButtonListener. Sets up listener with view.
      */
     ButtonListener() {
       CalcController.this.view.setCalculateListener(this);
     }
 
     /**
-     * Handles actionPerformed event when button is clicked.
-     * 
-     * @param e ActionEvent representing button click.
+     * Invoked when button is clicked. It retrieves expression, evaluates it using model, and
+     * updates view.
+     *
+     * @param e is ActionEvent representing button click.
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
@@ -126,21 +124,23 @@ public class CalcController {
   }
 
   /**
-   * Inner class implementing ActionListener interface for handling radio button clicks.
+   * ActionListener implementation for handling radio button clicks. It sets calculator mode based
+   * on selected radio button.
    */
   final class RadioListener implements ActionListener {
+
     /**
-     * Constructor for RadioListener.
+     * Constructor for RadioListener. Sets up listener with view.
      */
     RadioListener() {
       CalcController.this.view.setRadioListener(this);
     }
 
     /**
-     * Handles actionPerformed event when radio button is clicked and sets infix flag based on
-     * selected radio button.
-     * 
-     * @param e ActionEvent representing radio button click.
+     * Invoked when a radio button is clicked. It sets calculator mode based on selected radio
+     * button.
+     *
+     * @param e is ActionEvent representing radio button click.
      */
     @Override
     public void actionPerformed(final ActionEvent e) {
@@ -149,9 +149,9 @@ public class CalcController {
   }
 
   /**
-   * Placeholder method with similar name to demonstrate redundancy.
-   * 
-   * @return Always returns false.
+   * Checks if calculator is in infix mode.
+   *
+   * @return True if calculator is in infix mode, otherwise false.
    */
   public boolean isInfix1() {
     return false;

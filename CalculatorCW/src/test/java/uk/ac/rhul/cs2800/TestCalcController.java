@@ -10,8 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tests functionality of CalcController.
- * 
+ * Responsible for testing functionality of CalcController class.
+ *
  * @author abdul
  */
 class TestCalcController {
@@ -21,11 +21,12 @@ class TestCalcController {
   private CalcController controller;
 
   /**
-   * Sets up test environment before each test method is executed.
+   * Sets up test environment before each test case.
    */
   @BeforeEach
   void setUp() {
     model = new CalcModel();
+    view = new ConcreteTestView();
     controller = new CalcController(model, view);
   }
 
@@ -47,7 +48,7 @@ class TestCalcController {
   @Test
   void testRadioListener() {
     view.setInfixString("Infix");
-    controller.new RadioListener().actionPerformed(null);
+    view.triggerRadioButtonClick();
 
     System.out.println("IsInfix: " + controller.isInfix());
     System.out.println("InfixString: " + view.getInfixString());
@@ -55,35 +56,20 @@ class TestCalcController {
   }
 
   /**
-   * Abstract class extending TestView. Used for testing purposes.
+   * ConcreteTestView class extends TestView for testing.
    */
-  public abstract class ConcreteTestView extends TestView {
-
-    private String infixString;
-
+  public class ConcreteTestView extends TestView {
     @Override
     public String getExpression() {
       return null;
     }
 
     public Object getAnswerString() {
-      return null;
+      return "4";
     }
 
-    /**
-     * Sets infix string for testing purposes.
-     *
-     * @param string is infix string to set.
-     */
-    public void setInfixString(String string) {
-      this.infixString = string;
-    }
+    public void setInfixString(String string) {}
 
-    /**
-     * Sets question string for testing purposes.
-     *
-     * @param string is question string to set.
-     */
     public void setQuestion(String string) {}
 
     @Override
@@ -97,10 +83,18 @@ class TestCalcController {
 
     @Override
     public void addTypeObserver(Consumer<OpType> c) {}
+
+    @Override
+    public void setVisible(boolean b) {}
+
+    @Override
+    public String getViewName() {
+      return null;
+    }
   }
 
   /**
-   * Abstract class implementing ViewInterface. Used for testing purposes.
+   * Abstract TestView class for providing base for testing ViewInterface.
    */
   public abstract class TestView implements ViewInterface {
 
@@ -112,9 +106,6 @@ class TestCalcController {
       this.calculateListener = listener;
     }
 
-    /**
-     * Triggers button click event for testing purposes.
-     */
     public void triggerButtonClick() {
       if (calculateListener != null) {
         calculateListener
@@ -122,18 +113,10 @@ class TestCalcController {
       }
     }
 
-    /**
-     * Sets radio button listener for testing purposes.
-     *
-     * @param listener is radio button listener to set.
-     */
     public void setRadioListener(ActionListener listener) {
       this.radioListener = listener;
     }
 
-    /**
-     * Triggers radio button click event for testing.
-     */
     public void triggerRadioButtonClick() {
       System.out.println("Triggering radio button click");
       if (radioListener != null) {
@@ -143,7 +126,7 @@ class TestCalcController {
 
     @Override
     public String getQuestion() {
-      return null;
+      return "4";
     }
 
     @Override

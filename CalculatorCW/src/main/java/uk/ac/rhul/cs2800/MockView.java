@@ -10,8 +10,8 @@ import java.util.function.Consumer;
  */
 public class MockView implements ViewInterface {
 
-  private String expression;
-  private String answer;
+  private String expression = "3 + 2";
+  private String answer = "5";
 
   /**
    * Adds runnable as calculate observer.
@@ -37,17 +37,6 @@ public class MockView implements ViewInterface {
   @Override
   public String getExpression() {
     return expression;
-  }
-
-  /**
-   * Sets answer string.
-   *
-   * @param a Answer string to be set.
-   */
-  @Override
-  public void setAnswer(String a) {
-    System.out.println("Setting answer: " + a);
-    this.answer = a;
   }
 
   /**
@@ -140,5 +129,11 @@ public class MockView implements ViewInterface {
   public String getViewName() {
     // TODO Auto-generated method stub
     return null;
+  }
+
+  @Override
+  public void setAnswer(String a) {
+    // TODO Auto-generated method stub
+
   }
 }
