@@ -1,21 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>uk.ac.rhul.cs2800</groupId>
   <artifactId>CalculatorCW</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
   <name>CalculatorCW</name>
-  <description>Making Calculator for CW1</description>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
   </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
+      <artifactId>junit-jupiter-api</artifactId>
       <version>5.10.0</version>
       <scope>test</scope>
     </dependency>
@@ -28,11 +30,7 @@
       <groupId>org.openjfx</groupId>
       <artifactId>javafx-fxml</artifactId>
       <version>13</version>
-    </dependency>
-    <dependency>
-    	<groupId>cs2800.rhul.ac.uk</groupId>
-    	<artifactId>junit-example</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
+
     </dependency>
   </dependencies>
   <build>
@@ -43,7 +41,7 @@
       <resource>
         <directory>src/main/resources</directory>
         <includes>
-          <include>**/*.fml</include>
+          <include>**/*.fxml</include>
           <include>**/*.css</include>
           <include>**/*.txt</include>
         </includes>
@@ -68,11 +66,8 @@
         </dependencies>
         <configuration>
           <violationSeverity>warning</violationSeverity>
-          <failsOnError>true</failsOnError>
+          <failsOnError>True</failsOnError>
           <configLocation>/src/main/resources/googlePlus.xml</configLocation>
-          <inputEncoding>UTF-8</inputEncoding>
-          <consoleOutput>true</consoleOutput>
-          <linkXRef>false</linkXRef>
         </configuration>
         <executions>
           <execution>
@@ -83,11 +78,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -128,41 +118,15 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Below commented section was causing m2e error-->
-      <!--   <pluginManagement>  
-      <plugins>
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>
-                      org.apache.maven.plugins
-                    </groupId>
-                    <artifactId>
-                      maven-checkstyle-plugin
-                    </artifactId>
-                    <versionRange>
-                      [3.3.0]
-                    </versionRange>
-                    <goals>
-                      <goal>check</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore></ignore>
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement> -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+          <release>11</release>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.openjfx</groupId>
         <artifactId>javafx-maven-plugin</artifactId>
@@ -176,7 +140,8 @@
             <configuration>
               <options>
                 <option>
-                  -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8001</option>
+                  -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8001
+                </option>
               </options>
             </configuration>
           </execution>
@@ -191,7 +156,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>calculator.cs2800.Driver</mainClass>
+              <mainClass>Driver</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -206,40 +171,5 @@
         </executions>
       </plugin>
     </plugins>
-    <pluginManagement>
-    	<plugins>
-    		<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
-    		<plugin>
-    			<groupId>org.eclipse.m2e</groupId>
-    			<artifactId>lifecycle-mapping</artifactId>
-    			<version>1.0.0</version>
-    			<configuration>
-    				<lifecycleMappingMetadata>
-    					<pluginExecutions>
-    						<pluginExecution>
-    							<pluginExecutionFilter>
-    								<groupId>
-    									org.apache.maven.plugins
-    								</groupId>
-    								<artifactId>
-    									maven-checkstyle-plugin
-    								</artifactId>
-    								<versionRange>
-    									[3.3.0,)
-    								</versionRange>
-    								<goals>
-    									<goal>check</goal>
-    								</goals>
-    							</pluginExecutionFilter>
-    							<action>
-    								<ignore></ignore>
-    							</action>
-    						</pluginExecution>
-    					</pluginExecutions>
-    				</lifecycleMappingMetadata>
-    			</configuration>
-    		</plugin>
-    	</plugins>
-    </pluginManagement>
   </build>
 </project>

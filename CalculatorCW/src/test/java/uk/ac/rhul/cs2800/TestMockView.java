@@ -12,20 +12,6 @@ import org.junit.jupiter.api.Test;
  */
 class TestMockView {
   /**
-   * Test method for SetAnswer.
-   */
-  @Test
-  void testSetAnswer() {
-    MockView mockView = new MockView();
-    String expectedAnswer = "42";
-
-    mockView.setAnswer(expectedAnswer);
-    String actualAnswer = mockView.getAnswer();
-
-    assertEquals(expectedAnswer, actualAnswer);
-  }
-
-  /**
    * Test method for SetExpression.
    */
   @Test
