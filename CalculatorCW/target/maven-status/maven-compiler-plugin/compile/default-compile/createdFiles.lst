@@ -11,6 +11,7 @@ uk\ac\rhul\cs2800\OpStack.class
 uk\ac\rhul\cs2800\BadType.class
 uk\ac\rhul\cs2800\StandardCalc.class
 uk\ac\rhul\cs2800\AsciiView.class
+uk\ac\rhul\cs2800\View.class
 uk\ac\rhul\cs2800\StackEmptyException.class
 uk\ac\rhul\cs2800\CalcController$RadioListener.class
 uk\ac\rhul\cs2800\InvalidExpressionException.class

@@ -3,6 +3,8 @@ package uk.ac.rhul.cs2800;
 /**
  * From Dave COHEN, picked from a jar file on Moodle. Represents stack of strings with push and pop
  * operations.
+ * 
+ * @author abdul
  */
 
 public class StrStack {

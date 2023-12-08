@@ -49,9 +49,9 @@ public class CalcController {
       @Override
       public void run() {
         try {
-          CalcController.this.view.setVisible(true);
-          new ButtonListener();
-          new RadioListener();
+          // CalcController.this.view.setVisible(true);
+          // new ButtonListener();
+          // new RadioListener();
         } catch (Exception e) {
           e.printStackTrace();
         }
@@ -79,10 +79,13 @@ public class CalcController {
 
   /**
    * Sets calculator mode to infix or not.
-   *
-   * @param isInfix is True if calculator should be in infix mode, otherwise false.
+   * 
+   * @param infix True if calculator should be in infix mode, otherwise false.
+   * @return Always returns true.
    */
-  public void setInfix(boolean isInfix) {}
+  public boolean setInfix(boolean infix) {
+    return infix = true;
+  }
 
   /**
    * ActionListener implementation for handling button clicks. It evaluates expression, updates view
@@ -133,7 +136,7 @@ public class CalcController {
      * Constructor for RadioListener. Sets up listener with view.
      */
     RadioListener() {
-      CalcController.this.view.setRadioListener(this);
+      // CalcController.this.view.setRadioListener(this);
     }
 
     /**
@@ -146,14 +149,5 @@ public class CalcController {
     public void actionPerformed(final ActionEvent e) {
       setIsInfix("Infix".equals(CalcController.this.view.getInfixString()));
     }
-  }
-
-  /**
-   * Checks if calculator is in infix mode.
-   *
-   * @return True if calculator is in infix mode, otherwise false.
-   */
-  public boolean isInfix1() {
-    return false;
   }
 }

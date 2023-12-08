@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * Some code of this class is taken from Dave COHEN (from a jar file on Moodle).Represents a stack
  * data structure that can contain different types of Entry objects.
+ * 
+ * @author abdul
  */
 public final class Stack {
   private final ArrayList&lt;Entry&gt; contents;
@@ -13,10 +15,10 @@ public final class Stack {
   /**
    * Constructs an empty stack.
    */
-<span class="fc" id="L16">  public Stack() {</span>
-<span class="fc" id="L17">    this.contents = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L18">    this.size = 0;</span>
-<span class="fc" id="L19">  }</span>
+<span class="fc" id="L18">  public Stack() {</span>
+<span class="fc" id="L19">    this.contents = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">    this.size = 0;</span>
+<span class="fc" id="L21">  }</span>
 
   /**
    * Checks if the stack is empty.
@@ -24,7 +26,7 @@ public final class Stack {
    * @return 0 if the stack is empty, otherwise returns size.
    */
   public boolean isEmpty() {
-<span class="fc bfc" id="L27" title="All 2 branches covered.">    return size == 0;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">    return size == 0;</span>
   }
 
   /**
@@ -33,9 +35,9 @@ public final class Stack {
    * @param entry The Entry to push onto the stack.
    */
   public void push(final Entry entry) {
-<span class="fc" id="L36">    this.contents.add(entry);</span>
-<span class="fc" id="L37">    ++this.size;</span>
-<span class="fc" id="L38">  }</span>
+<span class="fc" id="L38">    this.contents.add(entry);</span>
+<span class="fc" id="L39">    ++this.size;</span>
+<span class="fc" id="L40">  }</span>
 
   /**
    * Returns the top Entry on the stack without removing it.
@@ -44,10 +46,10 @@ public final class Stack {
    * @throws StackEmptyException if the stack is empty.
    */
   public Entry top() throws StackEmptyException {
-<span class="fc bfc" id="L47" title="All 2 branches covered.">    if (this.size == 0) {</span>
-<span class="fc" id="L48">      throw new StackEmptyException(&quot;Top taken for empty stack&quot;);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">    if (this.size == 0) {</span>
+<span class="fc" id="L50">      throw new StackEmptyException(&quot;Top taken for empty stack&quot;);</span>
     }
-<span class="fc" id="L50">    return this.contents.get(this.size - 1);</span>
+<span class="fc" id="L52">    return this.contents.get(this.size - 1);</span>
   }
 
   /**
@@ -56,7 +58,7 @@ public final class Stack {
    * @return The number of elements in the stack.
    */
   public int size() {
-<span class="fc" id="L59">    return this.size;</span>
+<span class="fc" id="L61">    return this.size;</span>
   }
 
   /**
@@ -66,12 +68,12 @@ public final class Stack {
    * @throws StackEmptyException if the stack is empty.
    */
   public Entry pop() throws StackEmptyException {
-<span class="fc bfc" id="L69" title="All 2 branches covered.">    if (this.size == 0) {</span>
-<span class="fc" id="L70">      throw new StackEmptyException(&quot;Pop is taken for empty stack&quot;);</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">    if (this.size == 0) {</span>
+<span class="fc" id="L72">      throw new StackEmptyException(&quot;Pop is taken for empty stack&quot;);</span>
     }
-<span class="fc" id="L72">    --this.size;</span>
-<span class="fc" id="L73">    final Entry retval = this.contents.remove(this.size);</span>
-<span class="fc" id="L74">    return retval;</span>
+<span class="fc" id="L74">    --this.size;</span>
+<span class="fc" id="L75">    final Entry retval = this.contents.remove(this.size);</span>
+<span class="fc" id="L76">    return retval;</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
