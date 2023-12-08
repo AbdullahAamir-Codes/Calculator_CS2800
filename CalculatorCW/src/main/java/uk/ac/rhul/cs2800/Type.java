@@ -1,8 +1,8 @@
 package uk.ac.rhul.cs2800;
 
 /**
- * Represents different types for a token.
- *
+ * From Dave COHEN, picked from a jar file on Moodle. Represents different types for a token.
+ * 
  * @author abdul
  */
 public enum Type {

@@ -11,7 +11,6 @@ import java.util.function.Consumer;
  * @author abdul
  */
 public interface ViewInterface {
-
   /**
    * Adds observer for calculate action.
    *
@@ -87,7 +86,17 @@ public interface ViewInterface {
    */
   void setFailString(String errorMessage);
 
+  /**
+   * Sets visibility of view.
+   *
+   * @param b True if view should be visible, otherwise false.
+   */
   void setVisible(boolean b);
 
+  /**
+   * Retrieves name of view.
+   * 
+   * @return String representing name of view.
+   */
   String getViewName();
 }

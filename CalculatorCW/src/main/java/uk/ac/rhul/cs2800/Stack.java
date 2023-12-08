@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * Some code of this class is taken from Dave COHEN (from a jar file on Moodle).Represents a stack
  * data structure that can contain different types of Entry objects.
+ * 
+ * @author abdul
  */
 public final class Stack {
   private final ArrayList<Entry> contents;

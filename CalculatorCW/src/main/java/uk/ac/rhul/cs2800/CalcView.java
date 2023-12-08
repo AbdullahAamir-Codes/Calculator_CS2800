@@ -22,13 +22,41 @@ public class CalcView extends JFrame implements ViewInterface {
 
   private static final long serialVersionUID = -7214772146507844286L;
   private static final String infix = "Infix";
+  /**
+   * Main panel which holds all graphical components of calculator.
+   */
   private final JPanel panel;
+
+  /**
+   * Text field where user can input mathematical expressions.
+   */
   private final JTextField textField;
+
+  /**
+   * CCalculate button that triggers calculation process.
+   */
   private final JButton btnNewButton;
+
+  /**
+   * Radio button for selecting Reverse Polish notation.
+   */
   private final JRadioButton rdbtnNewRadioButtonOne;
+
+  /**
+   * Radio button for selecting Infix notation.
+   */
   private final JRadioButton rdbtnNewRadioButton;
+
+  /**
+   * Button group to ensure exclusive selection between two radio buttons.
+   */
   private final ButtonGroup buttonGroupOne;
+
+  /**
+   * Label used to display result or error messages.
+   */
   private final JLabel lblNewLabelThree;
+
 
   /**
    * Constructs new CalcView object, initializing GUI components.
@@ -80,7 +108,7 @@ public class CalcView extends JFrame implements ViewInterface {
   /**
    * Sets ActionListener for radio buttons.
    * 
-   * @param mal ActionListener to be set for the radio buttons.
+   * @param mal ActionListener to be set for radio buttons.
    */
   public void setRadioListener(final ActionListener mal) {
     this.getRdbtnNewRadioButtonOne().addActionListener(mal);
@@ -97,9 +125,9 @@ public class CalcView extends JFrame implements ViewInterface {
   }
 
   /**
-   * Returns constant string "Infix".
+   * Returns constant string called Infix".
    * 
-   * @return constant string "Infix".
+   * @return constant string called Infix".
    */
   public String getInfixString() {
     return "Infix";
@@ -143,57 +171,76 @@ public class CalcView extends JFrame implements ViewInterface {
     return null;
   }
 
+  /**
+   * Returns constant string "Infix".
+   * 
+   * @return constant string "Infix".
+   */
   public static String getInfix() {
     return infix;
   }
 
+  /**
+   * Returns Calculate button.
+   * 
+   * @return Calculate button.
+   */
   public JButton getBtnNewButton() {
     return btnNewButton;
   }
 
+  /**
+   * Returns first radio button.
+   * 
+   * @return first radio button.
+   */
   public JRadioButton getRdbtnNewRadioButton() {
     return rdbtnNewRadioButton;
   }
 
+  /**
+   * Returns second radio button.
+   * 
+   * @return second radio button.
+   */
   public JRadioButton getRdbtnNewRadioButtonOne() {
     return rdbtnNewRadioButtonOne;
   }
 
+  /**
+   * Returns answer label.
+   * 
+   * @return answer label.
+   */
   public JLabel getLblNewLabelThree() {
     return lblNewLabelThree;
   }
 
+  /**
+   * Returns text field.
+   * 
+   * @return text field.
+   */
   public JTextField getTextField() {
     return textField;
   }
 
   @Override
-  public void addCalculateObserver(Runnable f) {
-    // TODO Auto-generated method stub
-    
-  }
+  public void addCalculateObserver(Runnable f) {}
 
   @Override
-  public void addTypeObserver(Consumer<OpType> c) {
-    // TODO Auto-generated method stub
-    
-  }
+  public void addTypeObserver(Consumer<OpType> c) {}
 
   @Override
   public String getExpression() {
-    // TODO Auto-generated method stub
     return null;
   }
 
   @Override
-  public void startView() {
-    // TODO Auto-generated method stub
-    
-  }
+  public void startView() {}
 
   @Override
   public String getViewName() {
-    // TODO Auto-generated method stub
     return null;
   }
 }

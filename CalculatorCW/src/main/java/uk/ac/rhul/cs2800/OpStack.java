@@ -3,6 +3,8 @@ package uk.ac.rhul.cs2800;
 /**
  * From Dave COHEN, picked from a jar file on Moodle. Represents stack of symbols used in
  * calculator. Uses underlying stack data structure to perform push and pop operations.
+ * 
+ * @author abdul
  */
 public class OpStack {
   private static Stack myStack = new Stack();
